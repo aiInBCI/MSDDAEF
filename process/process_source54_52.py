@@ -9,8 +9,8 @@ from scipy import signal
 
 # data alignment for openBMI
 
-src = './data54'
-out = './cd_data54'
+src = './openBMI'
+out = './cd_openBMI'
 
 def butter_bandpass(lowcut, highcut, fs, order=5):   
     nyq = 0.5 * fs
