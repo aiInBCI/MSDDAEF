@@ -9,15 +9,13 @@ import torch
 from os.path import join as pjoin
 from torch.nn import functional as F
 
-# 52人数据集的迁移模型
-# 添加瓶颈层后的新模型
-class basemodel(nn.Module):  # vdeep4去掉最后一层
+# dual stream mddel for weighted average
+class basemodel(nn.Module): 
     def __init__(self, outpath, cv):
         super(basemodel, self).__init__()
         base_model = deep()
-        # print(pjoin(outpath, 'model_f{}_cv{}.pt'.format(fold, cv)))
-        checkpoint = torch.load(pjoin(outpath, 'model_cv{}.pt'.format(cv)))  # 加载模型参数
-        base_model.load_state_dict(checkpoint)  # 给模型参数赋值
+        checkpoint = torch.load(pjoin(outpath, 'model_cv{}.pt'.format(cv))) 
+        base_model.load_state_dict(checkpoint) 
 
         self.conv1 = base_model.conv1
         self.conv1_1 = base_model.conv1_1
@@ -36,13 +34,12 @@ class basemodel(nn.Module):  # vdeep4去掉最后一层
         self.bn4 = base_model.bn4
         self.max4 = base_model.max4
 
-        self.fc = base_model.fc  # 不取vdeep4最后一层，即classfier层
+        self.fc = base_model.fc  
 
     def forward(self, x):
-        out = self.conv1(x)  # (64 , 25, 991, 62)
-        out = self.conv1_1(out) # (64 , 25, 991, 1)
+        out = self.conv1(x) 
+        out = self.conv1_1(out) 
         out = F.elu(self.bn1(out))
-        # dropout的p设置为0，相当于冻结，不会随机失活
         out = F.dropout(self.max1(out), p=0, training=self.training)
 
         out = self.conv2(out)
@@ -58,7 +55,7 @@ class basemodel(nn.Module):  # vdeep4去掉最后一层
         out = self.max4(out)
 
         out = out.view(out.size(0), -1)
-        out = self.fc(out)  # 64 256
+        out = self.fc(out) 
         return out
 
 
@@ -67,13 +64,12 @@ class Transfer_Net(nn.Module):
         super(Transfer_Net, self).__init__()
 
         self.base_network = basemodel(outpath, cv)
-        self.use_bottleneck = use_bottleneck  # 下面的if判断
-        self.transfer_loss = transfer_loss   # 距离
+        self.use_bottleneck = use_bottleneck
+        self.transfer_loss = transfer_loss  
 
-        # 瓶颈层：全连接，BN，ELU激活函数，Dropout
         bottleneck_list = [nn.Linear(512, 256), nn.BatchNorm1d(256), nn.ELU(), nn.Dropout(0.5)]
         self.bottleneck_layer = nn.Sequential(*bottleneck_list)
-        # 分类层：全连接，ELU激活函数，Dropout， 全连接，LogSoftmax
+        
         classifier_layer_list = [nn.Linear(512, 256), nn.ELU(), nn.Dropout(0.5), nn.Linear(256, 2), nn.Softmax(dim=1)]
         self.classifier_layer = nn.Sequential(*classifier_layer_list)
         self.bottleneck_layer[0].weight.data.normal_(0, 0.005)
@@ -99,11 +95,11 @@ class Transfer_Net(nn.Module):
         return clf
 
     def adapt_loss(self, X, Y, adapt_loss):
-        """Compute adaptation loss, currently we support mmd and coral
+        """Compute adaptation loss, 
         Arguments:
             X {tensor} -- source matrix
             Y {tensor} -- target matrix
-            adapt_loss {string} -- loss type, 'mmd' or 'coral'. You can add your own loss
+            adapt_loss {string} -- loss type, 
         Returns:
             [tensor] -- adaptation loss tensor
         """
