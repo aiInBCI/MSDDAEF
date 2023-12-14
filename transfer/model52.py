@@ -1,9 +1,9 @@
 import torch.nn as nn
 from Coral import CORAL
-from cosine_distance import cosine_distance
-from euclidean_distance import euclidean_squared_distance
+#from cosine_distance import cosine_distance
+#from euclidean_distance import euclidean_squared_distance
 
-import mmd
+#import mmd
 from vdeep4 import deep
 import torch
 from os.path import join as pjoin
@@ -15,7 +15,6 @@ class basemodel(nn.Module):
     def __init__(self, outpath, cv):
         super(basemodel, self).__init__()
         base_model = deep()
-        # print(pjoin(outpath, 'model_f{}_cv{}.pt'.format(fold, cv)))
         checkpoint = torch.load(pjoin(outpath, 'model_cv{}.pt'.format(cv)))
         base_model.load_state_dict(checkpoint) 
 
@@ -39,8 +38,8 @@ class basemodel(nn.Module):
         self.fc = base_model.fc  
 
     def forward(self, x):
-        out = self.conv1(x)  # (64 , 25, 991, 62)
-        out = self.conv1_1(out) # (64 , 25, 991, 1)
+        out = self.conv1(x)  
+        out = self.conv1_1(out) 
         out = F.elu(self.bn1(out))
        
         out = F.dropout(self.max1(out), p=0, training=self.training)
