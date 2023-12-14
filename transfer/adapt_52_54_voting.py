@@ -151,13 +151,11 @@ for n in range(0,54):
     print('acc: {}'.format(np.sum(Y[300:] == pred) / 100))  
     accu[n,52] = np.sum(Y[300:] == pred) / 100
     print(accu)
-    # # save the classification accuracy and transfer loss
-    # np.save('100_acc_mmm_mmd_new', accu)
-    # np.save('100_acc_mmm_mmd_weight', ts_loss)
+    
 # end_time = time.time()
 # print('time',end_time-start_time)
 # save the classification accuracy and transfer loss
-np.save('100_acc_mmm_mmd_new', accu)
-np.save('100_acc_mmm_mmd_weight', ts_loss)
+np.save('100_acc_coral', accu)
+np.save('100_acc_coral_weight', ts_loss)
 
 
