@@ -1,9 +1,9 @@
 import torch.nn as nn
 from Coral import CORAL
-from cosine_distance import cosine_distance
-from euclidean_distance import euclidean_squared_distance
+#from cosine_distance import cosine_distance
+#from euclidean_distance import euclidean_squared_distance
 
-import mmd
+#import mmd
 from vdeep4 import deep
 import torch
 from os.path import join as pjoin
