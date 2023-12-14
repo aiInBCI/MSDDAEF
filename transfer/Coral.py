@@ -1,5 +1,5 @@
 import torch
-
+# https://github.com/jindongwang/transferlearning/tree/master/code/distance
 
 def CORAL(source, target):
     d = source.data.shape[1]
