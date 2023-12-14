@@ -17,9 +17,9 @@ subjs_sor = [35, 47, 46, 37, 13, 27, 12, 32,  4, 40, 19, 41, 18, 42, 34, 7,
          49, 9, 5, 48, 29, 15, 21, 17, 31, 45, 1, 38, 51, 8, 11, 16, 28, 44, 24,
          52, 3, 26, 39, 50, 6, 23, 2, 14, 25, 20, 10, 33, 22, 43, 36, 30]
 
-dfile = h5py.File('./54/ku_mi_smt.h5', 'r')
-dfile_sor = h5py.File('./adjust_52/KU_mi_smt.h5', 'r')
-# outpath = '../pretrain/pretrain_model_54/'
+dfile = h5py.File('../process/cd_openBMI/ku_mi_smt.h5', 'r')
+dfile_sor = h5py.File('../process/cd_GIST/KU_mi_smt.h5', 'r')
+outpath = '../pretrain/pretrain_model_54/'
 outpath2 = './model'
 ts_loss = np.load('100_acc_coral_weight.npy')
 
