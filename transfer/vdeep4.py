@@ -1,8 +1,7 @@
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
-# 目标域为52人数据集的预训练模型
-# 模型参考deep4，修改分类层，二维卷积替换为2层全连接
+
 class deep(nn.Module):
     def __init__(self):
         super(deep, self).__init__()
@@ -34,9 +33,9 @@ class deep(nn.Module):
             nn.Linear(in_features=512, out_features=2),
         )
 
-    def forward(self, x):  # (64, 1, 1000, 62)
-        out = self.conv1(x)  # (64 , 25, 991, 62)
-        out = self.conv1_1(out)  # (64 , 25, 991, 1)
+    def forward(self, x):  
+        out = self.conv1(x)  
+        out = self.conv1_1(out)  
         out = F.elu(self.bn1(out))
         out = F.dropout(self.max1(out), p=0.5, training=self.training)
 
@@ -55,14 +54,13 @@ class deep(nn.Module):
         out = out.view(out.size(0), -1)
         out = self.fc(out)
         out = self.conv_classifier(out)
-        out = nn.LogSoftmax(dim=1)(out)  # 对批量样本中的每个样本取概率
+        out = nn.LogSoftmax(dim=1)(out)  
 
         return out
 
 
 if __name__ == '__main__':
     model = deep()
-    # 查看网络结构
     print(model)
     for param in model.named_parameters():
         print(param[0])
