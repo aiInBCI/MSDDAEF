@@ -3,3 +3,5 @@ This is the PyTorch implementation of the Multi-Source Deep Domain Adaptation En
 ![](https://github.com/HZUBCI/MSDDAEF/blob/main/MSDDAEF.png)
 
 The aim of this work is to explore the feasibility  of cross-dataset knowledge transfer. This can largely relax the constraint of training samples for MI BCIs and thus has important practical sense.
+
+# Resources
