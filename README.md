@@ -10,5 +10,8 @@ openBMI:[Link](http://gigadb.org/dataset/100542)
 
 GIST[Link](http://gigadb.org/dataset/100295)
 
-##Sample pre-trained models
-GIST[Link](http://gigadb.org/dataset/100295)
+## Sample pre-trained models
+For openBMI[Link](https://github.com/HZUBCI/MSDDAEF/tree/main/pretrain/pretrain_model_54)
+
+## Sample pre-trained models
+For openBMI[Link](https://github.com/HZUBCI/MSDDAEF/tree/main/pretrain/pretrain_model_54)
