@@ -8,20 +8,14 @@ from tqdm import tqdm
 from os.path import join as pjoin
 import math
 from vdeep4 import deep
-"""
-52人数据集不做adapt
-"""
 
-subjs = [35, 47, 46, 37, 13, 27, 12, 32, 4, 40, 19, 41, 18, 42, 34, 7,
-         49, 9, 5, 48, 29, 15, 21, 17, 31, 45, 1, 38, 51, 8, 11, 16, 28, 44, 24,
-         52, 3, 26, 39, 50, 6, 23, 2, 14, 25, 20, 10, 33, 22, 43, 36, 30]
+# target domain data path
+dfile = h5py.File('../process/cd_openBMI/ku_mi_smt.h5', 'r')
 
-
-
-dfile = h5py.File('../transfer/54/ku_mi_smt.h5', 'r')
+# pretrained model save path
 outpath = '../pretrain/pretrain_model_54/'
-device = torch.device('cuda')
 
+device = torch.device('cuda')
 
 def evaluate(model, x, y):
     data_set = TensorDataset(x, y)
@@ -49,7 +43,6 @@ acc_54 = np.zeros([54])
 for n in range(54):
     X, Y = get_data(n+1)
     # print(X.shape, Y.shape)
-    #
     # print(X.shape)
 
     T_X_train, T_Y_train = X[:300], Y[:300]
@@ -70,12 +63,11 @@ for n in range(54):
     target_loader = DataLoader(dataset=target_set, batch_size=40, shuffle=True)
 
     model = deep()
-    checkpoint = torch.load(pjoin(outpath, 'model_cv{}.pt'.format(5)))  # 加载模型参数
-    model.load_state_dict(checkpoint)  # 给模型参数赋值
+    checkpoint = torch.load(pjoin(outpath, 'model_cv{}.pt'.format(5)))  # load pretrained model
+    model.load_state_dict(checkpoint)  
     model.to(device)
 
-    acc_54[n] = evaluate(model, T_X_test, T_Y_test)  # 生产的预测标签放到投票矩阵的对应位置
-    # print('acc: {}'.format(acc))
+    acc_54[n] = evaluate(model, T_X_test, T_Y_test)  
     print(acc_54)
 np.save('acc_independent_54.npy',acc_54)
 print(np.mean(acc_54))
