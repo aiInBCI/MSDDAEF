@@ -8,10 +8,11 @@ The aim of this work is to explore the feasibility  of cross-dataset knowledge t
 ## Datasets
 openBMI:[Link](http://gigadb.org/dataset/100542)
 
-GIST[Link](http://gigadb.org/dataset/100295)
+GIST:[Link](http://gigadb.org/dataset/100295)
 
 ## Sample pre-trained models
-For openBMI[Link](https://github.com/HZUBCI/MSDDAEF/tree/main/pretrain/pretrain_model_54)
+For openBMI:[Link](https://github.com/HZUBCI/MSDDAEF/tree/main/pretrain/pretrain_model_54)
 
-## Sample pre-trained models
-For openBMI[Link](https://github.com/HZUBCI/MSDDAEF/tree/main/pretrain/pretrain_model_54)
+## Sample multi-source adaptation models
+For openBMI:[Link](https://github.com/HZUBCI/MSDDAEF/tree/main/transfer/model)
+
