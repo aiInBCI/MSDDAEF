@@ -24,3 +24,16 @@ For openBMI:[Link](https://github.com/HZUBCI/MSDDAEF/tree/main/transfer/model)
 It is recommended to create a virtual environment with python version 3.7 and running the following:
 
     pip install -r requirements.txt
+## Obtain the raw dataset
+Download the raw dataset from the [resources](https://github.com/yzmmmzjhu/CT-adaptTL/blob/main/README.md#datasets) above(Please download the ME/MI data in mat file format), and save them to the same folder. 
+
+        datasets/GIST/s01.mat
+                     /s02.mat
+                     /...
+
+        datasets/openBMI/sess01_subj01_EEG_MI.mat
+                        /sess01_subj02_EEG_MI.mat
+                        /...
+                        /sess02_subj01_EEG_MI.mat
+                        /sess02_subj02_EEG_MI.mat
+                        /...
