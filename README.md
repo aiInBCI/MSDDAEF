@@ -19,3 +19,7 @@ For openBMI:[Link](https://github.com/HZUBCI/MSDDAEF/tree/main/pretrain/pretrain
 ## Sample multi-source adaptation models
 For openBMI:[Link](https://github.com/HZUBCI/MSDDAEF/tree/main/transfer/model)
 
+# Dependencies
+
+It is recommended to create a virtual environment with python version 3.7 and running the following:
+    pip install -r requirements.txt
