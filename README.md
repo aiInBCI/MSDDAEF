@@ -1,7 +1,11 @@
 # MSDDAEF
 This is the PyTorch implementation of the Multi-Source Deep Domain Adaptation Ensemble Framework for Cross-Dataset Motor Imagery EEG Transfer Learning
 
-This is an example when GIST is the source domain and openBMI is the target domain. The code is similar when the target domain is exchanged with the source domain.
+This is an example when GIST is the source domain and openBMI is the target domain.
+
+This is an example when base network is Deep Convnet and distance metric is coral. 
+
+The code is similar when the target domain is exchanged with the source domain.
 
 ![](https://github.com/HZUBCI/MSDDAEF/blob/main/MSDDAEF.png)
 
