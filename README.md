@@ -25,7 +25,7 @@ It is recommended to create a virtual environment with python version 3.7 and ru
 
     pip install -r requirements.txt
 ## Obtain the raw dataset
-Download the raw dataset from the [resources](https://github.com/yzmmmzjhu/CT-adaptTL/blob/main/README.md#datasets) above(Please download the ME/MI data in mat file format), and save them to the same folder. 
+Download the raw dataset from the [resources](https://github.com/HZUBCI/MSDDAEF/blob/main/README.md#resources) above(Please download the ME/MI data in mat file format), and save them to the same folder. 
 
         process/GIST/s01.mat
                      /s02.mat
