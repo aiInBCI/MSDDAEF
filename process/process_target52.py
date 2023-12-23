@@ -7,7 +7,7 @@ from scipy.signal import butter, lfilter
 from scipy import signal
 
 # data alignment for GIST
-src = './GIST/
+src = './GIST'
 out = './cd_GIST'
 
 def butter_bandpass(lowcut, highcut, fs, order=5):
