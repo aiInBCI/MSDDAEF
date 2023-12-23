@@ -37,3 +37,12 @@ Download the raw dataset from the [resources](https://github.com/HZUBCI/MSDDAEF/
                         /sess02_subj01_EEG_MI.mat
                         /sess02_subj02_EEG_MI.mat
                         /...
+# Cite:
+Miao M, Yang Z, Zeng H, Zhang W, Xu B, Hu W. Explainable cross-task adaptive transfer learning for motor imagery EEG classification. submitted to PHYSIOLOGICAL MEASUREMENT. 2023.
+
+# Acknowledgment
+We thank Kaishuo Zhang et al and Schirrmeister et al for their wonderful works.
+
+Zhang, Kaishuo, et al. "Adaptive transfer learning for EEG motor imagery classification with deep convolutional neural network." Neural Networks 136 (2021): 1-10.https://doi.org/10.1016/j.neunet.2020.12.013
+
+Schirrmeister, Robin Tibor, et al. "Deep learning with convolutional neural networks for EEG decoding and visualization." Human brain mapping 38.11 (2017): 5391-5420. https://doi.org/10.1002/hbm.23730
