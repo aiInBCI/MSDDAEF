@@ -23,7 +23,7 @@ For openBMI:[Link](https://github.com/HZUBCI/MSDDAEF/tree/main/pretrain/pretrain
 ## Sample multi-source adaptation models
 For openBMI:[Link](https://github.com/HZUBCI/MSDDAEF/tree/main/transfer/model)
 
-Please create a complete directory to save the multi-source domain models:
+Please create a complete directory to save the multi-source domain models when you actually run the project:
 
         transfer/model/sub0
                      /sub1
