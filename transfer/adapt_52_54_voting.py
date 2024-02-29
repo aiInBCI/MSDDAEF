@@ -133,7 +133,7 @@ for n in range(0,54):
         accu[n,ind], pred_voting[ind, :] = evaluate(model, T_X_test, T_Y_test)  # The produced prediction label is placed in the corresponding position in the voting matrix
 
         # save new models    
-        # path = pjoin('./coralloss_model/sub{}'.format(n), 'model_cv{}.pt'.format(ind))
+        # path = pjoin('./model/sub{}'.format(n), 'model_cv{}.pt'.format(ind))
         # torch.save(model.state_dict(), path)
              
         print(pred_voting[ind, :])
