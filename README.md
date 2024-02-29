@@ -47,8 +47,8 @@ Download the raw dataset from the [resources](https://github.com/HZUBCI/MSDDAEF/
                         /sess02_subj01_EEG_MI.mat
                         /sess02_subj02_EEG_MI.mat
                         /...
-# Cite:
-Miao M, Yang Z, Zeng H, Zhang W, Xu B, Hu W. Explainable cross-task adaptive transfer learning for motor imagery EEG classification. submitted to PHYSIOLOGICAL MEASUREMENT. 2023.
+#If used, please cite:
+Multi-Source Deep Domain Adaptation Ensemble Framework for Cross-Dataset Motor Imagery EEG Transfer Learning. submitted to PHYSIOLOGICAL MEASUREMENT. 2023.
 
 # Acknowledgment
 We thank Kaishuo Zhang et al and Schirrmeister et al for their wonderful works.
