@@ -63,7 +63,7 @@ print(cv_set.shape)
 kf = KFold(n_splits=6)
 device = torch.device('cuda')
 
-patience = 20  # When the validation set loss does not decrease in 20 consecutive training epoches, the training is stopped
+patience = 20  # When the validation set loss does not significantly decrease in 20 consecutive training epoches, the training is stopped
 
 cv_loss = np.ones([6])  # Minimum validation loss for saving each fold
 result = pd.DataFrame(columns=('cv_index', 'test_acc', 'loss'))  # Training process record
