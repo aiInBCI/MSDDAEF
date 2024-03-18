@@ -109,7 +109,6 @@ for cv_index, (train_index, test_index) in enumerate(kf.split(cv_set)):
     test_loader = DataLoader(dataset=test_set, batch_size=32, shuffle=True)
 
     model = deep().to(device)
-    # 优化器adamW改为SGD
     optimizer = torch.optim.AdamW(model.parameters(), lr=1 * 0.0001, weight_decay=0.5 * 0.001)
 
     train_losses = []  # A list of training losses for each epoch
