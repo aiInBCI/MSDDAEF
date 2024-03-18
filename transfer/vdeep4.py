@@ -27,7 +27,6 @@ class deep(nn.Module):
             nn.Linear(in_features=1600, out_features=512)
         )
 
-        # self.conv_classifier = nn.Conv2d(in_channels=200, out_channels=2, kernel_size=(7, 1), stride=(1, 1))
 
         self.conv_classifier = nn.Sequential(
             nn.Linear(in_features=512, out_features=2),
