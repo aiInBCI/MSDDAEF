@@ -3,9 +3,7 @@ This is the PyTorch implementation of the Multi-Source Deep Domain Adaptation En
 
 This is an example when GIST is the source domain and openBMI is the target domain.
 
-This is an example when base network is Deep Convnet and distance metric is coral. 
-
-The code is similar when the target domain is exchanged with the source domain.
+This is an example when base network is Deep ConvNet, distance metric is CORAL, ensemble strategy is majority voting. 
 
 ![](https://github.com/HZUBCI/MSDDAEF/blob/main/MSDDAEF.png)
 
