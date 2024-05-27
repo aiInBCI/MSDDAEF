@@ -46,7 +46,7 @@ Download the raw dataset from the [resources](https://github.com/HZUBCI/MSDDAEF/
                         /sess02_subj02_EEG_MI.mat
                         /...
 # If used, please cite:
-Multi-Source Deep Domain Adaptation Ensemble Framework for Cross-Dataset Motor Imagery EEG Transfer Learning. submitted to PHYSIOLOGICAL MEASUREMENT. 2023.
+Multi-Source Deep Domain Adaptation Ensemble Framework for Cross-Dataset Motor Imagery EEG Transfer Learning. PHYSIOLOGICAL MEASUREMENT. 2024. DOI 10.1088/1361-6579/ad4e95
 
 # Acknowledgment
 We thank Kaishuo Zhang et al and Schirrmeister et al for their wonderful works.
